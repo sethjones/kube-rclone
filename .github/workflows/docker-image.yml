@@ -18,7 +18,7 @@ jobs:
     - name: 'Build Inventory Image'
       run: |
         export TIMESTAMP=$(date +%s)
-        docker build . --tag ghcr.cr.io/sethjones/kube-rclone:latest
+        docker build . --tag ghcr.io/sethjones/kube-rclone:latest
         docker tag ghcr.io/sethjones/kube-rclone:latest ghcr.io/sethjones/kube-rclone:$TIMESTAMP
         docker push ghcr.io/sethjones/kube-rclone:$TIMESTAMP
         docker push ghcr.io/sethjones/kube-rclone:latest
