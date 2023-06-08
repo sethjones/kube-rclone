@@ -17,8 +17,9 @@ jobs:
         password: ${{secrets.GITHUB_TOKEN}}
     - name: 'Build Inventory Image'
       run: |
-        docker build . --tag ghcr.cr.io/sethjones/kube-rclone:$(date +%s) 
-        docker tag ghcr.io/sethjones/kube-rclone:$(date +%s) ghcr.io/sethjones/kube-rclone:latest
-        docker push ghcr.io/sethjones/kube-rclone:$(date +%s)
+        export TIMESTAMP=$(date +%s)
+        docker build . --tag ghcr.cr.io/sethjones/kube-rclone:latest
+        docker tag ghcr.io/sethjones/kube-rclone:latest ghcr.io/sethjones/kube-rclone:$TIMESTAMP
+        docker push ghcr.io/sethjones/kube-rclone:$TIMESTAMP
         docker push ghcr.io/sethjones/kube-rclone:latest
         
