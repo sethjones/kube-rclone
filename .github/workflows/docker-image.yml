@@ -19,5 +19,5 @@ jobs:
       run: |
         docker build . --tag ghcr.cr.io/sethjones/kube-rclone:$(date +%s) --tag cr.io/sethjones/kube-rclone:latest
         docker push ghcr.io/sethjones/kube-rclone:$(date +%s)
-        docker push cr.io/sethjones/kube-rclone:latest
+        docker push ghcr.io/sethjones/kube-rclone:latest
         
