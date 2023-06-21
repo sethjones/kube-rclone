@@ -8,7 +8,7 @@ RUN apk add --no-cache --virtual=build-dependencies wget unzip && \
     unzip /tmp/rclone-v${RCLONE_VERSION}-linux-amd64.zip && \
     mv /tmp/rclone-v${RCLONE_VERSION}-linux-amd64/rclone /usr/bin
 
-RUN apk -U add curl fuse ca-certificates && \
+RUN apk -U add curl fuse3 ca-certificates && \
     rm -rf /var/cache/apk/*
 
 RUN apk del --purge build-dependencies && \
